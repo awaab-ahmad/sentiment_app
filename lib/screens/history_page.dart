@@ -113,8 +113,8 @@ class _Data extends ConsumerWidget {
               .toList();
 
           if (kDebugMode) print(filteringList.length);
-
-          if (filteringList.isEmpty) {
+        
+          if (filteringList.isEmpty) {            
             return Align(
               alignment: .center,
               child: Text('No relevant sentiments'),

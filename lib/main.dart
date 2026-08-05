@@ -9,17 +9,6 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
 
-  //  WidgetsBinding.instance.addPostFrameCallback((_) {
-  //   SystemChrome.setSystemUIOverlayStyle(
-  //     SystemUiOverlayStyle(
-  //       statusBarColor: const Color(0x00000000),
-  //       statusBarIconBrightness: Brightness.dark,
-  //       systemNavigationBarColor: const Color(0x00000000),
-  //       systemNavigationBarContrastEnforced: false,
-  //       systemNavigationBarIconBrightness: .dark
-  //     )
-  //   );
-  //  });
   runApp(ProviderScope(child: const MainApp()));
 }
 
