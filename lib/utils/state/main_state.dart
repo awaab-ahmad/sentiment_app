@@ -70,7 +70,7 @@ class MainSentiState extends StateNotifier<SentimentMain> {
             .get(
               Uri.parse(callLink),
               headers: {
-                'X-Api-Key': 'NBsy1PiLlyY1z7f2nsYS00ecWGeH47f6cWnUeeex',
+                'X-Api-Key': '// You api here',
               },
             )
             .timeout(Duration(seconds: 10));
