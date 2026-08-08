@@ -70,7 +70,7 @@ class MainSentiState extends StateNotifier<SentimentMain> {
             .get(
               Uri.parse(callLink),
               headers: {
-                'X-Api-Key': '// You api here',
+                'X-Api-Key': 'NBsy1PiLlyY1z7f2nsYS00ecWGeH47f6cWnUeeex',
               },
             )
             .timeout(Duration(seconds: 10));
@@ -106,10 +106,12 @@ class MainSentiState extends StateNotifier<SentimentMain> {
             sentiment: senti,
             score: scr < 0 ? (scr * -100) : (scr * 100),
           );
+          state = state.copyWith(isFetching: false);
+          if (!cnt.mounted) return;
+          Navigator.of(
+            cnt,
+          ).push(navigate(const SentimentResult(isResult: true)));
         }
-        state = state.copyWith(isFetching: false);
-        if (!cnt.mounted) return;
-        Navigator.of(cnt).push(navigate(const SentimentResult(isResult: true)));
       } catch (error) {
         if (kDebugMode) print(error);
         state = state.copyWith(isFetching: false);
@@ -117,6 +119,7 @@ class MainSentiState extends StateNotifier<SentimentMain> {
     } else {
       if (kDebugMode) print('The Field is empty');
     }
+    state = state.copyWith(isFetching: false);
   }
 
   Future<void> addingData(BuildContext con) async {
@@ -135,8 +138,7 @@ class MainSentiState extends StateNotifier<SentimentMain> {
       'sentiment': state.sentiment,
       'score': state.score,
       'time': time,
-    }
-    );
+    });
 
     if (newRecent.isEmpty) {
       newRecent.add({

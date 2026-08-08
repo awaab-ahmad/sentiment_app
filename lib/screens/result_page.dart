@@ -148,14 +148,22 @@ class _ProgressBar extends ConsumerWidget {
 
     return SizedBox(
       width: 200,
+      height: 8,
       child: Card(
         clipBehavior: .antiAlias,
         margin: const .all(0),
-        child: LinearProgressIndicator(
-          minHeight: 6,
-          value: value,
-          color: col[senti],
-          backgroundColor: c.onPrimary,
+        child: TweenAnimationBuilder(
+          curve: Curves.easeOutCubic,
+          tween: Tween(begin: 0.0, end: value),
+          duration: Duration(seconds: 1),
+          builder: (context, val, child) {         
+            return LinearProgressIndicator(
+              minHeight: 6,
+              value: val,
+              color: col[senti],
+              backgroundColor: c.onPrimary,
+            );
+          },
         ),
       ),
     );
