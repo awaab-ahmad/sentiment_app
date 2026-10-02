@@ -1,17 +1,49 @@
-# sentiment_app
+# AI Sentiment Analyzer
 
-A new Flutter project.
+📝 An AI-powered Flutter application that analyzes text and determines the sentiment behind it. Users can enter text and instantly receive sentiment results categorized as Positive, Negative, or Neutral.
 
-## Getting Started
+## Features: 
+-  AI-powered sentiment analysis
+-  Detects positive, negative, and neutral emotions
+-  Real-time text processing
+-  Clear sentiment insights and confidence scores
+-  Clean and responsive user interface
 
-This project is a starting point for a Flutter application.
+## Screenshots:
+<img width="1280" height="769" alt="iPad Pro 12 9_ - 6" src="https://github.com/user-attachments/assets/fc42d4ca-af7c-46b4-bd83-81f95f5f3e53" />
 
-A few resources to get you started if this is your first Flutter project:
+-
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+<img width="1280" height="769" alt="iPad Pro 12 9_ - 7" src="https://github.com/user-attachments/assets/b48a8113-c65c-4a18-901f-b0bbbda4c3e8" />
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+-
+
+<img width="1280" height="769" alt="iPad Pro 12 9_ - 8" src="https://github.com/user-attachments/assets/0474e6ae-75f9-4a60-96ff-9d14959c2b92" />
+
+-
+
+<img width="1280" height="769" alt="iPad Pro 12 9_ - 9" src="https://github.com/user-attachments/assets/7a85d7c4-b5f2-4fb6-8019-23494c8a4a7a" />
+
+## 🛠️ Built With
+- Flutter
+- Dart
+- AI Ninja Based API
+- Material Design
+
+## 🚀 Getting Started
+### Prerequisites
+- Flutter SDK installed
+- Android Studio or VS Code
+- A configured Android emulator or physical device
+
+## 🎯 Future Improvements
+- Multi-language sentiment analysis
+- Emotion detection beyond sentiment
+- Sentiment history tracking
+- Voice-to-text sentiment analysis
+- Advanced AI insights
+ 
+## 👨‍💻 Author
+Developed by Awaab Ahmad using Flutter and AI Tecnhologies.
+ 
+
