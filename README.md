@@ -12,15 +12,15 @@
 ## Screenshots:
 <img width="1280" height="769" alt="iPad Pro 12 9_ - 6" src="https://github.com/user-attachments/assets/fc42d4ca-af7c-46b4-bd83-81f95f5f3e53" />
 
--
+
 
 <img width="1280" height="769" alt="iPad Pro 12 9_ - 7" src="https://github.com/user-attachments/assets/b48a8113-c65c-4a18-901f-b0bbbda4c3e8" />
 
--
+
 
 <img width="1280" height="769" alt="iPad Pro 12 9_ - 8" src="https://github.com/user-attachments/assets/0474e6ae-75f9-4a60-96ff-9d14959c2b92" />
 
--
+
 
 <img width="1280" height="769" alt="iPad Pro 12 9_ - 9" src="https://github.com/user-attachments/assets/7a85d7c4-b5f2-4fb6-8019-23494c8a4a7a" />
 
