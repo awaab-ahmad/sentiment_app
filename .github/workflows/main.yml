@@ -1,0 +1,29 @@
+name: Sentiment App 
+
+on: 
+  push: 
+
+jobs:
+  Analyzing:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set Up the Engine
+        uses: actions/checkout@v4
+
+      - name: Set up the flutter SDK
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cahce: True
+
+      - name: Get Flutter Pub
+        run: flutter pub get
+
+      - name: Format the Code files
+        run: dart format --set-exit-if-changed
+      
+      - name: Analyze the files
+        run: flutter analyze
+
+  
