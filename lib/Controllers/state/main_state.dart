@@ -5,56 +5,9 @@ import 'package:flutter_riverpod/legacy.dart';
 import 'package:hive/hive.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
-import 'package:sentiment_app/screens/result_page.dart';
-import 'package:sentiment_app/utils/reusables/navigate.dart';
-
-class SentimentMain {
-  bool isFetching;
-  String text;
-  String sentiment;
-  double score;
-  Map<String, List<Map<String, dynamic>>> data;
-  List<Map<String, dynamic>> recent = [];
-  String filter;
-  int filterIndex;
-
-  SentimentMain({
-    this.isFetching = false,
-    this.text = '',
-    this.sentiment = '',
-    this.score = 0,
-    required this.data,
-    required this.recent,
-    this.filter = 'All',
-    this.filterIndex = 0,
-  });
-
-  SentimentMain copyWith({
-    bool? isFetching,
-    String? text,
-    String? sentiment,
-    double? score,
-    Map<String, List<Map<String, dynamic>>>? data,
-    List<Map<String, dynamic>>? recent,
-    String? filter,
-    int? filterIndex,
-  }) {
-    return SentimentMain(
-      isFetching: isFetching ?? this.isFetching,
-      text: text ?? this.text,
-      sentiment: sentiment ?? this.sentiment,
-      score: score ?? this.score,
-      data: data ?? this.data,
-      recent: recent ?? this.recent,
-      filter: filter ?? this.filter,
-      filterIndex: filterIndex ?? this.filterIndex,
-    );
-  }
-}
-
-final sentiState = StateNotifierProvider<MainSentiState, SentimentMain>(
-  (ref) => MainSentiState(),
-);
+import 'package:sentiment_app/Model/main_model.dart';
+import 'package:sentiment_app/Views/Screens/result_page.dart';
+import 'package:sentiment_app/Views/reusables/navigate.dart';
 
 class MainSentiState extends StateNotifier<SentimentMain> {
   MainSentiState() : super(SentimentMain(data: {}, recent: []));
@@ -100,9 +53,9 @@ class MainSentiState extends StateNotifier<SentimentMain> {
               senti = 'Neutral';
               break;
           }
-          if (kDebugMode) print(senti);
+          if (kDebugMode) print('The text from web is: ${result['text']}');
           state = state.copyWith(
-            text: result['text'],
+            text: text,
             sentiment: senti,
             score: scr < 0 ? (scr * -100) : (scr * 100),
           );
@@ -114,12 +67,12 @@ class MainSentiState extends StateNotifier<SentimentMain> {
         }
       } catch (error) {
         if (kDebugMode) print(error);
+      } finally {
         state = state.copyWith(isFetching: false);
       }
     } else {
       if (kDebugMode) print('The Field is empty');
     }
-    state = state.copyWith(isFetching: false);
   }
 
   Future<void> addingData(BuildContext con) async {
@@ -129,10 +82,13 @@ class MainSentiState extends StateNotifier<SentimentMain> {
     if (kDebugMode) print(formatMonth);
     if (kDebugMode) print(time);
 
-    final newState = Map<String, List<Map<String, dynamic>>>.from(state.data);
     final newRecent = List<Map<String, dynamic>>.from(state.recent);
 
-    newState.putIfAbsent(formatMonth, () => []);
+    final dta = Map<String, List<Map<String, dynamic>>>.from(state.data)
+      ..remove(formatMonth);
+
+    final newState = {formatMonth: state.data[formatMonth] ?? [], ...dta};
+
     newState[formatMonth]!.insert(0, {
       'text': state.text,
       'sentiment': state.sentiment,
