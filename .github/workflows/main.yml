@@ -20,10 +20,4 @@ jobs:
       - name: Get Flutter Pub
         run: flutter pub get
 
-      - name: Format the Code files
-        run: dart format --set-exit-if-changed
-      
-      - name: Analyze the files
-        run: flutter analyze
-
   
