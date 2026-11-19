@@ -4,6 +4,7 @@ import 'package:sentiment_app/Views/Screens/splash_page.dart';
 import 'package:sentiment_app/Views/themes/theme_dark.dart';
 import 'package:sentiment_app/Views/themes/theme_light.dart';
 import 'package:flutter/material.dart';
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
