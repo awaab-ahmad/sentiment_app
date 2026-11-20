@@ -87,6 +87,5 @@ final lightTheme = ThemeData(
       fontWeight: .w500,
       color: Color(0xFFFBF6EF),
     ),
-    
   ),
 );

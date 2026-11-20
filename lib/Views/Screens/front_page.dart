@@ -79,7 +79,7 @@ class _TopBar extends ConsumerWidget {
           },
           visualDensity: const VisualDensity(vertical: 0, horizontal: 0),
           icon: Icon(Icons.history_sharp, size: 32, color: c.onSurface),
-        ),       
+        ),
       ],
     );
   }
@@ -161,7 +161,7 @@ class _Button extends ConsumerWidget {
     }
     return ElevatedButton(
       onPressed: () async {
-        final text = input.text.trim();        
+        final text = input.text.trim();
         await ref.read(sentiState.notifier).apiCallPlacing(text, context);
         input.clear();
       },

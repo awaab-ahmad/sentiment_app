@@ -156,7 +156,7 @@ class _ProgressBar extends ConsumerWidget {
           curve: Curves.easeOutCubic,
           tween: Tween(begin: 0.0, end: value),
           duration: Duration(seconds: 1),
-          builder: (context, val, child) {         
+          builder: (context, val, child) {
             return LinearProgressIndicator(
               minHeight: 6,
               value: val,

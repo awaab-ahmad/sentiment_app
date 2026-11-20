@@ -9,7 +9,6 @@ import 'package:sentiment_app/Model/main_model.dart';
 import 'package:sentiment_app/Views/Screens/result_page.dart';
 import 'package:sentiment_app/Views/reusables/navigate.dart';
 
-
 class MainSentiState extends StateNotifier<SentimentMain> {
   MainSentiState() : super(SentimentMain(data: {}, recent: []));
 
