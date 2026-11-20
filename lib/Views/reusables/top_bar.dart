@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:sentiment_app/Controllers/state/main_state.dart';
 import 'package:sentiment_app/Controllers/state/providers.dart';
 
 class TopBar extends ConsumerWidget {

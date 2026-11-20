@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sentiment_app/Views/reusables/top_bar.dart';
 import 'package:sentiment_app/Controllers/state/providers.dart';

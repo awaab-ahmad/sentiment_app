@@ -3,7 +3,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:sentiment_app/Views/Screens/splash_page.dart';
 import 'package:sentiment_app/Views/themes/theme_dark.dart';
 import 'package:sentiment_app/Views/themes/theme_light.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

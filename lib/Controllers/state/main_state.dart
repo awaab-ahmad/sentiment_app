@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_riverpod/legacy.dart';
 import 'package:hive/hive.dart';
 import 'package:http/http.dart' as http;
@@ -8,6 +8,7 @@ import 'package:intl/intl.dart';
 import 'package:sentiment_app/Model/main_model.dart';
 import 'package:sentiment_app/Views/Screens/result_page.dart';
 import 'package:sentiment_app/Views/reusables/navigate.dart';
+
 
 class MainSentiState extends StateNotifier<SentimentMain> {
   MainSentiState() : super(SentimentMain(data: {}, recent: []));
@@ -23,7 +24,7 @@ class MainSentiState extends StateNotifier<SentimentMain> {
             .get(
               Uri.parse(callLink),
               headers: {
-                'X-Api-Key': '// Your key',
+                'X-Api-Key': 'NBsy1PiLlyY1z7f2nsYS00ecWGeH47f6cWnUeeex',
               },
             )
             .timeout(Duration(seconds: 10));
