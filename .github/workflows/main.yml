@@ -21,6 +21,6 @@ jobs:
         run: flutter pub get
 
       - name: Print the message
-        echo: Hello Awaab
+        echo: Hello Awaab Ahmad Minhas
 
   
