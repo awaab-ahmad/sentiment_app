@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter/services.dart';
 
 final lightTheme = ThemeData(
@@ -87,6 +87,5 @@ final lightTheme = ThemeData(
       fontWeight: .w500,
       color: Color(0xFFFBF6EF),
     ),
-    
   ),
 );

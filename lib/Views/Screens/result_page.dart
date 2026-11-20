@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sentiment_app/Views/reusables/top_bar.dart';
 import 'package:sentiment_app/Controllers/state/providers.dart';
@@ -156,7 +156,7 @@ class _ProgressBar extends ConsumerWidget {
           curve: Curves.easeOutCubic,
           tween: Tween(begin: 0.0, end: value),
           duration: Duration(seconds: 1),
-          builder: (context, val, child) {         
+          builder: (context, val, child) {
             return LinearProgressIndicator(
               minHeight: 6,
               value: val,

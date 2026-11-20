@@ -1,10 +1,8 @@
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sentiment_app/Views/Screens/history_page.dart';
 import 'package:sentiment_app/Views/reusables/navigate.dart';
 import 'package:sentiment_app/Views/reusables/stored_tile_model.dart';
-import 'package:sentiment_app/Controllers/state/main_state.dart';
 import 'package:sentiment_app/Controllers/state/providers.dart';
 
 class FrontPage extends StatelessWidget {
@@ -81,7 +79,7 @@ class _TopBar extends ConsumerWidget {
           },
           visualDensity: const VisualDensity(vertical: 0, horizontal: 0),
           icon: Icon(Icons.history_sharp, size: 32, color: c.onSurface),
-        ),       
+        ),
       ],
     );
   }
@@ -163,7 +161,7 @@ class _Button extends ConsumerWidget {
     }
     return ElevatedButton(
       onPressed: () async {
-        final text = input.text.trim();        
+        final text = input.text.trim();
         await ref.read(sentiState.notifier).apiCallPlacing(text, context);
         input.clear();
       },
