@@ -2,6 +2,7 @@ name: Sentiment App
 
 on: 
   push: 
+  pull_request:
 
 jobs:
   Analyzing:
