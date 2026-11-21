@@ -18,11 +18,36 @@ jobs:
           channel: stable
           cahce: True
 
-      - name: Get Flutter Pub
-        run: flutter pub get
-
       - name: Running dart formatter
         run: dart format --set-exit-if-changed .
+
+  build: 
+    runs-on: ubuntu-latest
+    needs: Analyzing
+
+    steps: 
+      - name: Setting up engine
+        uses: actions/checkout@v4
+
+      - name: Setting flutter SDK
+        uses: subusito/flutter-action@v2
+        with: 
+          channel: stable
+
+      - name: Doing Flutter
+        run: flutter clean
+
+      - name: Doing flutter pub get
+        run: flutter pub get
+
+      - name: Building the application
+        run: flutter build apk --split-per-abi
+
+      - name: Uploading the File to artifacts
+        uses: actions/upload-artifact@v4
+        with: 
+          name: Sentiments Releases
+          path: build/app/outputs/flutter-apk
 
 
   

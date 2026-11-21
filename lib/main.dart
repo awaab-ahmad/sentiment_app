@@ -23,3 +23,5 @@ class MainApp extends StatelessWidget {
     );
   }
 }
+
+// writing the working down to zero to make sense and its perfect to make new shape
