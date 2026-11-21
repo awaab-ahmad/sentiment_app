@@ -19,6 +19,7 @@ class _SplashScreenState extends ConsumerState<SplashScreen> {
       ref.read(sentiState.notifier).gettingData();
       Future.delayed(Duration(seconds: 2), () {
         if (!context.mounted) return;
+        // ignore: use_build_context_synchronously
         Navigator.of(context).pushReplacement(navigate(FrontPage()));
       });
     });
